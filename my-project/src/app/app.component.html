@@ -1,0 +1,19 @@
+<div class="table-container">
+  <h1><i>Click the header to sort the table !</i></h1>
+  <table class="table">
+    <thead>
+      <tr>
+        <th class="header-section" (click)="sortTable('name')">Name</th>
+        <th class="header-section" (click)="sortTable('category')">Category</th>
+        <th class="header-section" (click)="sortTable('amount')">Amount</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let result of results | orderByColumn:columnType:reverse">
+        <td class="content-section">{{result.name}}</td>
+        <td class="content-section">{{result.category}}</td>
+        <td class="content-section">{{result.amount}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
